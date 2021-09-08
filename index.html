@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Our Athletes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <style>
+        /* Font */
+        @font-face {
+            font-family: 'Objektiv';
+            src: url('./Font/Objektiv-Regular.ttf');
+            src: url('./Font/Objektiv-Regular.ttf') format('embedded-opentype'),
+                url('./Font/Objektiv-Regular.ttf') format('ttf'),
+                url('./Font/Objektiv-Regular.ttf') format('ttf'),
+                url('./Font/Objektiv-Regular.ttf')  format('truetype'),
+                url('./Font/Objektiv-Regular.ttf') format('ttf');
+        }
+        /* Variables */
+            :root {
+                --text-grey: #bbb;
+                --background: #f4f4f6;
+                --title-blue: #5fc5e0;
+                --title-hover: #128af9;
+                --text-black: #000;
+                --font-text: 'Montserrat', sans-serif;
+                --font-title: 'Objektiv';
+            }
+        /* Global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 65.2%;
+        }
+
+        body {
+            background-color: var(--background);
+        }
+
+        .col-centered {
+            float: none;
+            margin: 0 auto;
+        }
+
+        .carousel-control {
+            width: 8%;
+            width: 0px;
+        }
+        .carousel-control.left,
+        .carousel-control.right {
+            margin-right: 7px;
+            margin-left: 7px;
+            background-image: none;
+            opacity: 1;
+        }
+        .carousel-control > a > span {
+            color: var(--text-grey);
+            border: none;
+            font-size: 29px !important;
+        }
+
+        .carousel-col {
+            position: relative;
+            min-height: 1px;
+            padding: 5px;
+            float: left;
+        }
+
+        .active > div {
+            display:none;
+        }
+        .active > div:first-child {
+            display:block;
+            
+        }
+
+        /*xs*/
+        @media (max-width: 767px) {
+            .carousel-inner .active.left {
+                left: -100%;
+            }
+            .carousel-inner .active.right {
+                left: 100%;
+            }
+            .carousel-inner .next {
+                left:  100%;
+            }
+            .carousel-inner .prev{
+                left: -100%;
+            }
+            .carousel-col {
+                width: 100%;
+            }
+        }
+
+        /*sm*/
+        @media (min-width: 768px) and (max-width: 991px) {
+            .carousel-inner .active.left {
+                left: -50%;
+            }
+            .carousel-inner .active.right {
+                left: 50%;
+            }
+            .carousel-inner .next {
+                left:  50%;
+            }
+            .carousel-inner .prev{
+                left: -50%;
+            }
+            .carousel-col {
+                width: 50%;
+            }
+            .active > div:first-child + div {
+                display:block;
+            }
+        }
+
+        /*md*/
+        @media (min-width: 992px) {
+            .carousel-inner .active.left {
+                left: -33%;
+            }
+            .carousel-inner .active.right {
+                left: 33%;
+            }
+            .carousel-inner .next {
+                left:  33%;
+            }
+            .carousel-inner .prev{
+                left: -33%;
+            }
+            .carousel-col {
+                width: 33%;
+            }
+            .active > div:first-child + div {
+                display:block;
+            }
+            .active > div:first-child + div + div {
+                display:block;
+            }
+        }
+
+
+        .block {
+            display: flex;
+            justify-content: center;
+            height: 400px;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            margin: 1rem 0;
+            margin-top: 3rem;
+        }
+        .block img {
+            width: 200px;
+        }
+        .block h3 {
+            font-size: 2.4rem;
+            color: var(--title-hover);
+            font-family: var(--font-title);
+        }
+        .block p {
+            font-size: 1.4rem;
+            font-family: var(--font-text);
+        }
+
+        .text-title {
+            text-align: center;
+        }
+        .text-title h3 {
+            font-family: var(--font-text);
+            font-size: 1.6rem;
+            color: var(--text-grey);
+            letter-spacing: 5px;
+            font-weight: 600;
+        }
+        .text-title h2 {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: var(--text-black);
+            font-weight: 600;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-title">
+            <h3>GET INSPIRED</h3>
+            <h2>Our Athletes</h2>
+        </div>
+        <div class="row">
+            <div class="col-xs-11 col-md-10 col-centered">
+                <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="4500">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="carousel-col">
+                                <div class="block img-responsive">
+                                    <img src="./images/athlete(1).png" alt="Athlete Image">
+                                    <h3>Jessie Diggins</h3>
+                                    <p>
+                                        Olympic Gold Medalist and World Cup Champion Cross Country Skier
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div class="block img-responsive">
+                                    <img src="./images/Copia de athlete-2.png" alt="Athlete Image">
+                                    <h3>Brooke Raboutou</h3>
+                                    <p>
+                                        Olympic and Youth World Champion Rock Climber
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div class="block img-responsive">
+                                    <img src="./images/Copia de athlete-3.png" alt="Athlete Image">
+                                    <h3>Katie Zafares</h3>
+                                    <p>
+                                        Olympic Silver and Bronze Medalist and 2019 ITU World Triathlon Series women's champion
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div class="block img-responsive">
+                                    <img src="./images/ATHLETE.png" alt="Athlete Image">
+                                    <h3>Tim O’Donnell</h3>
+                                    <p>
+                                        IRONMAN Champion and Triathlete World Champion
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-col">
+                                <div class="block img-responsive">
+                                    <img src="./images/AHTLETE-2.png" alt="Athlete Image">
+                                    <h3>Matt McElroy</h3>
+                                    <p>
+                                        ITU Triathlon World Cup medalist
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="left carousel-control">
+                        <a href="#carousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div class="right carousel-control">
+                        <a href="#carousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script>
+        $('.carousel[data-type="multi"] .item').each(function () {
+                var next = $(this).next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+                next.children(':first-child').clone().appendTo($(this));
+
+                for (var i = 0; i < 2; i++) {
+                    next = next.next();
+                    if (!next.length) {
+                        next = $(this).siblings(':first');
+                    }
+
+                    next.children(':first-child').clone().appendTo($(this));
+                }
+            });
+    </script>
+
+</body>
+
+</html>
